@@ -16,15 +16,15 @@ let package = Package(
     ],
     dependencies: [
         .package(name: "Primitives", path: "../Primitives"),
-        .package(url: "https://github.com/groue/GRDB.swift.git", exact: Version(7, 6, 1)),
-        .package(url: "https://github.com/groue/GRDBQuery.git", exact: Version(0, 11, 0)),
+        .package(name: "GRDB", path: "../Dependencies/GRDB.swift"),
+        .package(name: "GRDBQuery", path: "../Dependencies/GRDBQuery"),
     ],
     targets: [
         .target(
             name: "Store",
             dependencies: [
                 "Primitives",
-                .product(name: "GRDB", package: "GRDB.swift"),
+                .product(name: "GRDB", package: "GRDB"),
                 .product(name: "GRDBQuery", package: "GRDBQuery"),
             ],
             path: "Sources"

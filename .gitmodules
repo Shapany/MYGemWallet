@@ -2,3 +2,18 @@
 	path = core
 	url = https://github.com/gemwalletcom/core
 	branch = main
+[submodule "Packages/Dependencies/BigInt"]
+	path = Packages/Dependencies/BigInt
+	url = https://github.com/attaswift/BigInt.git
+[submodule "Packages/Dependencies/GRDB.swift"]
+	path = Packages/Dependencies/GRDB.swift
+	url = https://github.com/groue/GRDB.swift.git
+[submodule "Packages/Dependencies/GRDBQuery"]
+	path = Packages/Dependencies/GRDBQuery
+	url = https://github.com/groue/GRDBQuery.git
+[submodule "Packages/Dependencies/reown-swift"]
+	path = Packages/Dependencies/reown-swift
+	url = https://github.com/gemwalletcom/reown-swift.git
+[submodule "Packages/Dependencies/Starscream"]
+	path = Packages/Dependencies/Starscream
+	url = https://github.com/daltoniam/Starscream.git
