@@ -57,13 +57,25 @@ If you want to contribute, you can use our [developers telegram](https://t.me/ge
 
 ## 🚀 Getting Started
 
+### CocoaPods Integration (New!)
+
+You can now integrate GemWallet into your iOS project using CocoaPods:
+
+```ruby
+pod 'GemWallet', :git => 'https://github.com/Shapany/MYGemWallet.git', :branch => 'main'
+```
+
+📖 **Quick Start Guide**: [QUICK_START.md](QUICK_START.md)  
+📦 **Installation Guide**: [POD_INSTALLATION.md](POD_INSTALLATION.md)  
+📚 **CocoaPods Docs**: [COCOAPODS.md](COCOAPODS.md)
+
 ### iOS Development
 
 > [!NOTE]
 > Gem iOS needs [Apple silicon Mac](https://support.apple.com/en-us/116943) to build by default.
 
 1. Setup [Xcode](https://developer.apple.com/xcode)
-2. Clone the repo `git clone https://github.com/gemwalletcom/gem-ios.git --recursive`
+2. Clone the repo `git clone https://github.com/Shapany/MYGemWallet.git --recursive`
 3. Run `just bootstrap` to install all necessary tools. Make sure you have `just` installed `brew install just`. 
 
 If you're using a legacy Intel Mac, you need to pull latest `core` submodule and run `just generate-stone` to build `x86_64` arch Gemstone, the core library used by Gem iOS.
