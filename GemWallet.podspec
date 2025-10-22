@@ -51,9 +51,15 @@ their digital assets and cryptocurrencies with multi-chain support.
     store.source_files = 'Packages/Store/Sources/**/*.swift'
     store.dependency 'GemWallet/Primitives'
     store.dependency 'GemWallet/GemstonePrimitives'
-    store.dependency 'GRDB.swift', '~> 7.0'
-    store.dependency 'GRDBQuery', '~> 0.10'
+    store.dependency 'GemWallet/GRDBQuery'
     store.frameworks = 'Foundation'
+  end
+  
+  # GRDBQuery - Local dependency
+  s.subspec 'GRDBQuery' do |grdbq|
+    grdbq.source_files = 'Packages/Dependencies/GRDBQuery/Sources/**/*.swift'
+    grdbq.dependency 'GRDB.swift', '~> 7.0'
+    grdbq.frameworks = 'Foundation', 'SwiftUI', 'Combine'
   end
   
   # Blockchain - Blockchain integration layer
@@ -164,9 +170,28 @@ their digital assets and cryptocurrencies with multi-chain support.
     cs.dependency 'GemWallet/GemAPI'
     cs.dependency 'GemWallet/Store'
     cs.dependency 'GemWallet/Blockchain'
-    cs.dependency 'ReownWalletKit', '~> 1.0'
-    cs.dependency 'Starscream', '~> 4.0'
+    cs.dependency 'GemWallet/ReownSwift'
+    cs.dependency 'GemWallet/Starscream'
     cs.frameworks = 'Foundation'
+  end
+  
+  # ReownSwift - WalletConnect v2 (local submodule)
+  s.subspec 'ReownSwift' do |reown|
+    reown.source_files = 'Packages/Dependencies/reown-swift/Sources/**/*.swift'
+    reown.dependency 'GemWallet/Starscream'
+    reown.frameworks = 'Foundation', 'Combine'
+  end
+  
+  # Starscream - WebSocket client (local submodule)
+  s.subspec 'Starscream' do |star|
+    star.source_files = 'Packages/Dependencies/Starscream/Sources/**/*.swift'
+    star.frameworks = 'Foundation', 'Network', 'Security'
+  end
+  
+  # BigInt - Arbitrary precision arithmetic (local submodule)
+  s.subspec 'BigInt' do |bigint|
+    bigint.source_files = 'Packages/Dependencies/BigInt/sources/**/*.swift'
+    bigint.frameworks = 'Foundation'
   end
   
   # FeatureServices - Feature services
